@@ -1,0 +1,37 @@
+<div mat-dialog-title>
+    <h1>{{title}}</h1>
+</div>
+<br />
+<br />
+<mat-dialog-content>
+    <table width="100%">
+        <tr>
+            <td style="padding: 10px;"><label class="accountNumber"><b>Account No</b></label></td>
+            <td style="padding: 10px;"><input type="text" [(ngModel)]="accountNumber"></td>
+        </tr>
+        <tr>
+            <td style="padding: 10px;"><label class="trxAmount"><b>Transaction Amount</b></label></td>
+            <td style="padding: 10px;"><input type="text" [(ngModel)]="trxAmount"></td>
+        </tr>
+        <tr>
+            <td style="padding: 10px;"><label class="trxDate"><b>Transaction Date</b></label></td>
+            <td style="padding: 10px;"><input type="date" [ngModel]="formattedDate" (ngModelChange)="trxDate=$event"></td>
+        </tr>
+        <tr>
+            <td style="padding: 10px;"><label class="description"><b>Description</b></label></td>
+            <td style="padding: 10px;"><input type="text" [(ngModel)]="description"></td>
+        </tr>
+        <tr>
+            <td style="padding: 10px;"><label class="trxTime"><b>Transaction Time</b></label></td>
+            <td style="padding: 10px;"><input type="text" [(ngModel)]="trxTime"></td>
+        </tr>
+        <tr>
+            <td style="padding: 10px;"><label class="customerId"><b>Customer Id</b></label></td>
+            <td style="padding: 10px;"><input type="text" [(ngModel)]="customerId"></td>
+        </tr>
+    </table>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <a class="btn" (click)="onUpdate()">Save</a>
+    <a class="btn" (click)="onClose()">Close</a>
+</mat-dialog-actions>

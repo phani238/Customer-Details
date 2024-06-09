@@ -1,0 +1,49 @@
+<div class="form-group">
+    <form class="search-form">
+        <div>
+            <label class="search">Customer ID</label>
+            <input type="text" class="search-field" name="custId" id="custId" (change)="OnCustIdChange($event)">
+        </div>
+        <div>
+            <label class="search">Account Number</label>
+            <input type="text" class="search-field" name="accountNumber" id="accountNumber"
+                (change)="OnAcctNoChange($event)">
+        </div>
+        <div>
+            <label class="search">Description</label>
+            <input type="text" class="search-field" name="desc" id="desc" (change)="OnDescChange($event)">
+        </div>
+        <div class="btn-primary">
+            <a class="btn search" (click)="searchEntries()">Search</a>
+        </div>
+    </form>
+</div>
+<div *ngIf="showResult">
+    <div class="form-group">
+        <table width="100%" class="card-body table mb-0">
+            <thead>
+                <tr>
+                    <th>Account Number</th>
+                    <th>Transaction Amount</th>
+                    <th>Description</th>
+                    <th>Transaction Date</th>
+                    <th>Transaction Time</th>
+                    <th>Customer ID</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of getAllCustomer">
+                    <td>{{e.accountNumber}}</td>
+                    <td>{{e.trxAmount}}</td>
+                    <td>{{e.description}}</td>
+                    <td>{{e.trxDate}}</td>`
+                    <td>{{e.trxTime}}</td>
+                    <td>{{e.customerId}}</td>
+                    <td><em class="fa fa-edit cursor" (click)="editEntries(e)"></em></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
